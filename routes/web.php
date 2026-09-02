@@ -10,7 +10,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/product/{catId?}', [ProductController::class, 'index']);
+Route::get('/product/{catId?}', [ProductController::class, 'index'])->name('product.index');
+Route::put('/product/{product}', [ProductController::class, 'update'])->name('product.update');
+Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
 Route::get('/category', function () {
     return view('category');
