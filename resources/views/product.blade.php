@@ -20,7 +20,7 @@
                                   style="height: 250px; width: 100%; object-fit: cover;" alt=""></a>
 						</div>
 						<h3>{{$item->name}}</h3>
-						<p class="product-price"><span>{{$item->quantity}}</span> {{$item->price}}$ </p>
+						<p class="product-price">${{$item->price}} <span>({{$item->quantity}} in stock)</span></p>
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>

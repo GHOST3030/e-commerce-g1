@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -9,14 +10,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/product/{catId?}', function ($catId=null) {
-    if($catId){
-      $products=DB::table('products')->where('category_id',$catId)->get();
-    }else{
-         $products=DB::table('products')->get();
-    }
-     return view('product',compact('products'));
-});
+Route::get('/product/{catId?}', [ProductController::class, 'index']);
 
 Route::get('/category', function () {
     return view('category');
